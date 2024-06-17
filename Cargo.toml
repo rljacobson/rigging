@@ -1,0 +1,21 @@
+[package]
+name = "rigging"
+version = "0.1.0"
+edition = "2021"
+description = "A casual implementation of the Sail ISA specification language."
+readme = "README.md"
+authors = ["Robert Jacobson <rljacobson@gmail.com>"]
+repository = ""
+
+[features]
+default = []
+
+# Optionally use arbitrary precision integers
+bigint = ["num-bigint"]
+
+[dependencies]
+string_cache  = "0.8" # String interning
+codemap       = { path = "../codemap" }
+
+# Optional dependency on num-bigint, only included if the bigint feature is enabled
+num-bigint = { version = "0.4.5", optional = true }
